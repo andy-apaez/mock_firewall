@@ -17,14 +17,19 @@ def main():
         "192.168.1.1": "DENY",
         "10.0.0.1": "DENY",
         "172.16.0.1": "DENY",
-        "192.168.0.1": "DENY"
+        "192.168.0.1": "DENY",
+        "192.168.0.2": "DENY",
+        "192.168.0.3": "DENY",
+        "192.168.0.4": "DENY"
     }
 
     for _ in range(10):
         random_ip = generate_random_ip()
         action = mock_firewall_rules(random_ip, firewall_rules)
         random_number = random.randint(1, 9999)
-        print(f"IP: {random_ip}, Action: {action}, Random Number: {random_number}")
+        print(
+            f"IP: {random_ip}, Action: {action}, Random Number: {random_number}")
+
 
 if __name__ == "__main__":
     main()
